@@ -15,11 +15,3 @@ Package.onUse(function(api) {
   ], 'client');
   api.addFiles('active-links.js', 'client');
 });
-
-Package.onTest(function(api) {
-  api.use([
-    'sanjo:jasmine@0.14.0',
-    'zooshme:active-links'
-  ], 'client');
-  api.addFiles('tests/jasmine/client/integration/test-spec.js', 'client');
-});
