@@ -1,7 +1,7 @@
 Package.describe({
   name: 'zooshme:active-links',
   version: '0.0.1',
-  summary: 'Adds an ".active" class to links pointing to current path, or a parent of the current path',
+  summary: 'Adds an ".active" class to links pointing to current path, or to a parent of the current path',
   git: 'https://github.com/zooshme/active-links.git',
   documentation: 'README.md'
 });
@@ -17,7 +17,9 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('zooshme:active-links');
-  api.addFiles('active-links-tests.js', 'client');
+  api.use([
+    'sanjo:jasmine@0.14.0',
+    'zooshme:active-links'
+  ], 'client');
+  api.addFiles('tests/jasmine/client/integration/test-spec.js', 'client');
 });
