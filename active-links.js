@@ -1,7 +1,7 @@
 Template.onRendered(function() {
   var path = Router.current().location.get().path;
   var paths = path.replace(/(\/[A-Za-z\-]+)/g, function(m, $1, idx, str) {
-      return str.slice(0, str.length - idx).replace(/\/$/, '') + ',';
+      return str.slice(0, idx || str.length).replace(/\/$/, '') + ',';
     })
     .replace(/\,$/, '')
     .split(',');
